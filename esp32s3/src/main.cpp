@@ -3,27 +3,27 @@
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
-const char* mqtt_server = "192.168.1.100";
-const int mqtt_port = 1883;
+const char* ssid = "KIMCHI";
+const char* password = "0974102335";
+const char* mqtt_server = "192.168.0.150";
+const int mqtt_port = 1884;
 
 WiFiClient espClient;
 PubSubClient mqttClient(espClient);
 
 void callback(char* topic, byte* payload, unsigned int length) {
-  StaticJsonDocument<256> doc;
+  DynamicJsonDocument doc(256);
   deserializeJson(doc, payload, length);
 
-  String node_id = doc["node_id"];
-  String command = doc["command"];
-  String actuator = doc["actuator"];
-  auto value = doc["value"];
+  String node_id = doc["node_id"].as<String>();
+  String command = doc["command"].as<String>();
+  String actuator = doc["actuator"].as<String>();
+  bool value = doc["value"].as<bool>();
 
   char response_topic[64];
   snprintf(response_topic, sizeof(response_topic), "cmd/%s/response", node_id.c_str());
 
-  StaticJsonDocument<256> response;
+  DynamicJsonDocument response(256);
   response["status"] = "ok";
   response["command"] = command;
   char buffer[256];

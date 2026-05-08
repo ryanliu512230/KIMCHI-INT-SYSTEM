@@ -2,14 +2,17 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import os
+import sys
 
-from .database import init_db
-from .mqtt_client import init_mqtt_client, get_mqtt_client
-from .routers import nodes_router, commands_router
-from .database import get_db
+sys.path.insert(0, '/app')
+
+from database import init_db
+from mqtt_client import init_mqtt_client, get_mqtt_client
+from routers import nodes_router, commands_router
+from database import get_db
 
 mqtt_broker = os.getenv("MQTT_BROKER", "mosquitto")
-mqtt_port = int(os.getenv("MQTT_PORT", "1883"))
+mqtt_port = int(os.getenv("MQTT_PORT", "1884"))
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

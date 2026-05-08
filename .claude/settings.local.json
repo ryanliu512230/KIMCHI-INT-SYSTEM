@@ -14,7 +14,19 @@
       "Bash(git commit *)",
       "Bash(git config *)",
       "Bash(git push *)",
-      "Bash(docker-compose config *)"
+      "Bash(docker-compose config *)",
+      "Bash(where pio *)",
+      "Bash(pio run *)",
+      "Bash(docker-compose up *)",
+      "Bash(npm install *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr 1883)",
+      "Bash(tasklist *)",
+      "Bash(powershell *)",
+      "Bash(docker-compose ps *)",
+      "Bash(docker-compose logs *)",
+      "Bash(docker-compose restart *)",
+      "Bash(curl *)"
     ]
   }
 }

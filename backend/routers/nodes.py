@@ -2,8 +2,8 @@ from fastapi import APIRouter, HTTPException
 from typing import List
 from datetime import datetime
 
-from ..database import get_db
-from ..models import Node, SensorData, SensorHistoryResponse
+from database import get_db
+from models import Node, SensorData, SensorHistoryResponse
 
 router = APIRouter(prefix="/api/nodes", tags=["nodes"])
 

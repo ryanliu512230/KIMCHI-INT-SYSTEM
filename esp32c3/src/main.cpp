@@ -2,32 +2,33 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
+#include <dht.h>
 
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
-const char* mqtt_server = "192.168.1.100";
-const int mqtt_port = 1883;
+const char* ssid = "KIMCHI";
+const char* password = "0974102335";
+const char* mqtt_server = "192.168.0.150";
+const int mqtt_port = 1884;
 const char* node_id = "esp-c3-001";
 
 #define DHTPIN 2
-#define DHTTYPE DHT22
-DHT dht(DHTPIN, DHTTYPE);
+#define DHTTYPE DHT::DHT22
+DHT dht;
 
 WiFiClient espClient;
 PubSubClient mqttClient(espClient);
 
 void callback(char* topic, byte* payload, unsigned int length) {
-  StaticJsonDocument<256> doc;
+  DynamicJsonDocument doc(256);
   deserializeJson(doc, payload, length);
 
-  String command = doc["command"];
-  String actuator = doc["actuator"];
-  auto value = doc["value"];
+  String command = doc["command"].as<String>();
+  String actuator = doc["actuator"].as<String>();
+  bool value = doc["value"].as<bool>();
 
   if (command == "set_actuator") {
     char response_topic[64];
     snprintf(response_topic, sizeof(response_topic), "cmd/%s/response", node_id);
-    StaticJsonDocument<256> response;
+    DynamicJsonDocument response(256);
     response["status"] = "ok";
     response["actuator"] = actuator;
     char buffer[256];
@@ -58,13 +59,13 @@ void reconnect() {
 }
 
 void publish_sensor_data() {
-  float temp = dht.readTemperature();
-  float humidity = dht.readHumidity();
+  float temp = dht.getTemperature();
+  float humidity = dht.getHumidity();
 
   if (!isnan(temp) && !isnan(humidity)) {
     char temp_topic[64];
     snprintf(temp_topic, sizeof(temp_topic), "sen/%s/temperature", node_id);
-    StaticJsonDocument<256> temp_doc;
+    DynamicJsonDocument temp_doc(256);
     temp_doc["value"] = temp;
     temp_doc["unit"] = "C";
     temp_doc["timestamp"] = millis() / 1000;
@@ -74,7 +75,7 @@ void publish_sensor_data() {
 
     char hum_topic[64];
     snprintf(hum_topic, sizeof(hum_topic), "sen/%s/humidity", node_id);
-    StaticJsonDocument<256> hum_doc;
+    DynamicJsonDocument hum_doc(256);
     hum_doc["value"] = humidity;
     hum_doc["unit"] = "%";
     hum_doc["timestamp"] = millis() / 1000;
@@ -85,7 +86,7 @@ void publish_sensor_data() {
 
 void setup() {
   Serial.begin(115200);
-  dht.begin();
+  dht.setup(DHTPIN);
   setup_wifi();
   mqttClient.setServer(mqtt_server, mqtt_port);
   mqttClient.setCallback(callback);
