@@ -1,4 +1,6 @@
-.pio/build/esp32-c3-devkitm-1/src/main.cpp.o: src/main.cpp \
+.pio/build/esp32-c3-devkitm-1/lib5b5/Update/Updater.cpp.o: \
+ C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/Update/src/Updater.cpp \
+ C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/Update/src/Update.h \
  C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
  C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp_arduino_version.h \
  C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/freertos/include/freertos/FreeRTOS.h \
@@ -161,31 +163,10 @@
  C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/esp_hw_support/include/soc/esp32/spiram.h \
  C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/io_pin_remap.h \
  C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFi.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/Print.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/IPv6Address.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiType.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiSTA.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiGeneric.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/esp_wifi/include/esp_smartconfig.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/wifi_provisioning/include/wifi_provisioning/manager.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/protocomm/include/common/protocomm.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/protocomm/include/security/protocomm_security.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/wifi_provisioning/include/wifi_provisioning/wifi_config.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiAP.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiScan.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiClient.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/Client.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiServer.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/Server.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiUdp.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/Udp.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/cbuf.h \
- .pio/libdeps/esp32-c3-devkitm-1/PubSubClient/src/PubSubClient.h \
- .pio/libdeps/esp32-c3-devkitm-1/ArduinoJson/src/ArduinoJson.h \
- .pio/libdeps/esp32-c3-devkitm-1/ArduinoJson/src/ArduinoJson.hpp \
- .pio/libdeps/esp32-c3-devkitm-1/ArduinoJson/src/ArduinoJson/Configuration.hpp \
- .pio/libdeps/esp32-c3-devkitm-1/DHT/dht.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/libraries/Update/src/Update.h \
  C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/cores/esp32/MD5Builder.h \
- C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/esp_rom/include/esp_rom_md5.h
+ C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/esp_rom/include/esp_rom_md5.h \
+ C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/spi_flash/include/esp_spi_flash.h \
+ C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/app_update/include/esp_ota_ops.h \
+ C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/bootloader_support/include/esp_image_format.h \
+ C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/bootloader_support/include/esp_flash_partitions.h \
+ C:/Users/KIMCHI/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32c3/include/bootloader_support/include/esp_app_format.h

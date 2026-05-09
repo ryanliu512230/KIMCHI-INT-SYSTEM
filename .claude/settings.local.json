@@ -26,7 +26,10 @@
       "Bash(docker-compose ps *)",
       "Bash(docker-compose logs *)",
       "Bash(docker-compose restart *)",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "Bash(docker-compose exec *)",
+      "Bash(pio device *)",
+      "Bash(docker-compose build *)"
     ]
   }
 }
